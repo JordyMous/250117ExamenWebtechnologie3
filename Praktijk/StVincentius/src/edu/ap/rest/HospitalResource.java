@@ -16,7 +16,7 @@ public class HospitalResource extends ServerResource {
 	public String allRegistrations() {
 		
 		JDBConnection c = JDBConnection.getJDBConnection();
-		c.openConnection("students", "root", "");
+		c.openConnection("hospital", "root", "");
 		ArrayList<String> resultArray = c.selectAll();
 		c.closeConnection();
 		

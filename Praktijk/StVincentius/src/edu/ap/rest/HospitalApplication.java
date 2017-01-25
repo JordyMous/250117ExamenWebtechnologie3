@@ -15,7 +15,7 @@ public class HospitalApplication extends Application {
         Router router = new Router(getContext());
 
         // Defines only one route
-        router.attach("/studentsTable", HospitalResource.class);
+        router.attach("/hospital", HospitalResource.class);
 
         return router;
     }

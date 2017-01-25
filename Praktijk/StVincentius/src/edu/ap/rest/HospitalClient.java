@@ -12,10 +12,22 @@ public class HospitalClient {
              try {
             	ClientResource resource = new ClientResource("http://127.0.0.1:8181/hospital/registrations");
             	// Post a new record
-            	JSONObject json = new JSONObject();
-        		json.put("lastname", "test4");
-        		json.put("firstname", "test4");
-        		json.put("grade", 20);
+            	JSONObject json = new JSONObject(); //Nieuwe registratie aanmaken
+            	
+            	json.put("date", "25/01/2017"); //Registratie invullen en een eerste keer posten
+            	json.put("name", "Jordy Mous");
+            	json.put("dateOfBirth", "10/01/1996");
+            	json.put("doctorName", "Dr Pepper");
+            	json.put("diagnosis", "Alcoholvergifteging");
+            	
+        		resource.post(json.toString());
+            	
+            	json.put("date", "28/03/2018");	//Registratie aanpassen en een tweede keer posten
+            	json.put("name", "Spongebob Squarepants");
+            	json.put("dateOfBirth", "01/01/1901");
+            	json.put("doctorName", "Dr Dré");
+            	json.put("diagnosis", "Mentale Stoornis");
+            	
         		resource.post(json.toString());
             	
             	// Write the response entity on the console
